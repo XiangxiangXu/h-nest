@@ -4,7 +4,7 @@ This short script illustrates how to extract maximal correlation functions with 
 
 
 ## Maximal Correlation Functions ##
-For given variables *X*, *Y*, the maximal correlation functions <img src="https://render.githubusercontent.com/render/math?math=(f_1%5E*(x)%2C%20g_1%5E*(y))%2C%20%5Cdots%2C%20(f_k%5E*(x)%2C%20g_k%5E*(y))%2C%20%5Cdots%20"> represent the maximal correlated aspects of *X* and *Y*, which can be recursively defined as [4]
+For given variables *X*, *Y*, the maximal correlation functions $(f_1^*(x), g_1^*(y)), \dots, (f_k^*(x), g_k^*(y)), \dots$ <img src="https://render.githubusercontent.com/render/math?math=(f_1%5E*(x)%2C%20g_1%5E*(y))%2C%20%5Cdots%2C%20(f_k%5E*(x)%2C%20g_k%5E*(y))%2C%20%5Cdots%20"> represent the maximal correlated aspects of *X* and *Y*, which can be recursively defined as [4]
 
 <center>
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle%20f%5E*_i%2C%20g_i%5E*%20%3D%20%5Carg%20%5Cmax_%7Bf_i%2C%20g_i%7D%20%20%0A%20%5Cmathbb%7BE%7D%5Bf_i(X)%20g_i(Y)%5D.%0A">
