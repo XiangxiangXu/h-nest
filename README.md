@@ -20,34 +20,37 @@ and where $f_0^\ast = g_0^\ast \equiv 1$ are constant functions.
 
 ## H-score ##
 
-Given *k*-dimensional features *f* of *X* and *g* of *Y*, the H-score <img src="https://render.githubusercontent.com/render/math?math=%5Cmathscr%7BH%7D(f%2C%20g)"> is defined as
+Given $k$-dimensional features $f$ of $X$ and $g$ of $Y$, the H-score $\mathscr{H}(f, g)$ is defined as
 
+$$
+   \mathscr{H}(f, g) = \mathbb{E}[\langle f(X),  g(Y)\rangle] - \langle \mathbb{E}[f(X)],  \mathbb{E}[g(Y)]\rangle - \frac 12 \cdot \mathrm{tr}\left(\mathbb{E}[f(X)f^{\mathrm{T}}(X)]\cdot \mathbb{E}[g(Y)g^{\mathrm{T}}(Y)]\right).
+$$
 <center>
-<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle%5Cmathscr%7BH%7D(f%2C%20g)%20%3D%20%5Cmathbb%7BE%7D%5B%5Clangle%20f(X)%2C%20%20g(Y)%5Crangle%5D%20-%20%5Clangle%20%5Cmathbb%7BE%7D%5Bf(X)%5D%2C%20%20%5Cmathbb%7BE%7D%5Bg(Y)%5D%20%5Crangle%20-%20%5Cfrac%7B1%7D%7B2%7D%5Ccdot%20%5Cmathrm%7Btr%7D%5Cleft(%5Cmathbb%7BE%7D%5Bf(X)f%5E%7B%5Cmathrm%7BT%7D%7D(X)%5D%5Ccdot%20%5Cmathbb%7BE%7D%5Bg(Y)g%5E%7B%5Cmathrm%7BT%7D%7D(Y)%5D%5Cright)%0A">
-</center>
 
-It can be verified that [1] to maximize  <img src="https://render.githubusercontent.com/render/math?math=%5Cmathscr%7BH%7D(f%2C%20g)">, *f* and *g* should correspond to the *k*-dimensional subspace spanned by the top-*k* maximal correlation functions <img src="https://render.githubusercontent.com/render/math?math=(f_1%5E*%2C%20%5Cdots%2C%20f_k%5E*)"> and <img src="https://render.githubusercontent.com/render/math?math=(g_1%5E*%2C%20%5Cdots%2C%20g_k%5E*)">, respectively.
+It can be verified that [1] to maximize $\mathscr{H}(f, g)$, the $k$-dimensional subspaces spanned by $f$ and $g$ should match the $k$-dimensional subspaces spanned by the top-$k$ maximal correlation functions $(f_1^\ast, \dots, f_k^\ast)$ and $(g_1^\ast, \dots, g_k^\ast)$, respectively.
 
 ## Nested H-score ##
 
 The nested H-score is the sum of H-scores associated with a series of nested features, defined as
-<center>
-<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle%5Cmathscr%7BH%7D%5E%7B%5Coplus%7D(f%2C%20g)%20%3D%20%5Csum_%7Bi%20%3D%201%7D%5Ek%20%5Cmathscr%7BH%7D(f%5E%7B%5Bi%5D%7D%2C%20g%5E%7B%5Bi%5D%7D)">
-</center>
+ 
+ $$
+    \mathscr{H}^{\oplus}(f, g) = \sum_{i = 1}^k \mathscr{H}(f^{[i]}, g^{[i]}),
+ $$
+ 
+ where $f^{[i]} = [f_1, \dots, f_i]^\mathrm{T}$  is the feature composed of the first $i$-dimensions of $f$.
 
-where <img src="https://render.githubusercontent.com/render/math?math=f%5E%7B%5Bi%5D%7D%20%5Ctriangleq%20%5Bf_1%2C%20%5Cdots%2C%20f_i%5D%5E%5Cmathrm%7BT%7D"> is the feature composed of the first *i*-dimensions of *f*.
+Then, it can be verified that to maximize the nested H-score $\mathscr{H}^{\oplus}(f, g)$, the one-dimension features $f_i$ and $g_i$  must be aligned to the *i*-th maximal correlation functions $f_i^\ast$, $g_i^\ast$, respectively.
 
-Then, it can be verified that to maximize the nested H-score <img src="https://render.githubusercontent.com/render/math?math=%5Cmathscr%7BH%7D%5E%7B%5Coplus%7D(f%2C%20g)">, the one-dimension features <img src="https://render.githubusercontent.com/render/math?math=f_i"> and <img src="https://render.githubusercontent.com/render/math?math=g_i"> must be aligned to the *i*-th maximal correlation functions <img src="https://render.githubusercontent.com/render/math?math=f_i%5E*">, <img src="https://render.githubusercontent.com/render/math?math=g_i%5E*">, respectively.
+More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ that maximize the nested H-score $\mathscr{H}^{\oplus}(f, g)$ would satisfy
 
-More precisely, the functions <img src="https://render.githubusercontent.com/render/math?math=f%20%3D%20(f_1%2C%20%5Cdots%2C%20f_k)%2C%20g%20%3D%20(g_1%2C%20%5Cdots%2C%20g_k)"> that maximize the nested H-score <img src="https://render.githubusercontent.com/render/math?math=%5Cmathscr%7BH%7D%5E%7B%5Coplus%7D(f%2C%20g)"> would satisfy
+ $$
+  f_i = a_i \cdot f_i^\ast, \quad g_i = b_i \cdot g_i^\ast,
+ $$
+ 
+ where $a_i, b_i$ are scalars with $a_i \cdot b_i = \mathbb{E}[f_i^\ast(X) g_i^\ast(Y)].$
 
-<center>
-<img src="https://render.githubusercontent.com/render/math?math=f_i%20%3D%20a_i%20%5Ccdot%20f_i%5E*%2C%20%5Cquad%20g_i%20%20%3D%20b_i%20%5Ccdot%20g_i%5E*">
-</center>
-where <img src="https://render.githubusercontent.com/render/math?math=a_i%2C%20b_i"> are scalars with <img src="https://render.githubusercontent.com/render/math?math=a_i%20%5Ccdot%20b_i%20%3D%20%5Cmathbb%7BE%7D%5Bf_i%5E*(X)%20g_i%5E*(Y)%5D">.
 
-
-With "<img src="https://render.githubusercontent.com/render/math?math=%2B%5C!%5C!%5C!%5C!%2B">" denoting the feature concatenation operation, we can compute nested H-score <img src="https://render.githubusercontent.com/render/math?math=%5Cmathscr%7BH%7D%5E%7B%5Coplus%7D(f%2C%20g)"> with the following nested structure.
+With "$\mathbin{+\mkern-10mu+}$" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\oplus}(f, g)$ with the following nested structure.
 
 <center>
 <img src="images/nested_H.png" width="768">
