@@ -50,7 +50,7 @@ More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ tha
  where $a_i, b_i$ are scalars with $a_i \cdot b_i = \mathbb{E}[f_i^\ast(X) g_i^\ast(Y)].$
 
 
-With "$\mathbin{+\mkern-10mu+}$" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\perp}(f, g)$ with the following nested structure.
+With "<img src="https://render.githubusercontent.com/render/math?math=%2B%5C!%5C!%5C!%5C!%2B">" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\perp}(f, g)$ with the following nested structure.
 
 <center>
 <img src="images/nested_H.png" width="768">
