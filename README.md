@@ -34,14 +34,14 @@ It can be verified that [1] to maximize $\mathscr{H}(f, g)$, the $k$-dimensional
 The nested H-score is the sum of H-scores associated with a series of nested features, defined as
  
  $$
-    \mathscr{H}^{\oplus}(f, g) = \sum_{i = 1}^k \mathscr{H}(f^{[i]}, g^{[i]}),
+    \mathscr{H}^{\perp}(f, g) = \sum_{i = 1}^k \mathscr{H}(f_{[i]}, g_{[i]}),
  $$
  
- where $f^{[i]} = [f_1, \dots, f_i]^\mathrm{T}$  is the feature composed of the first $i$-dimensions of $f$.
+ where $f_{[i]} = [f_1, \dots, f_i]^\mathrm{T}$  is the feature composed of the first $i$-dimensions of $f$.
 
-Then, it can be verified that to maximize the nested H-score $\mathscr{H}^{\oplus}(f, g)$, the one-dimension features $f_i$ and $g_i$  must be aligned to the *i*-th maximal correlation functions $f_i^\ast$, $g_i^\ast$, respectively.
+Then, it can be verified that to maximize the nested H-score $\mathscr{H}^{\perp}(f, g)$, the one-dimension features $f_i$ and $g_i$  must be aligned to the $i$-th maximal correlation functions $f_i^\ast$, $g_i^\ast$, respectively.
 
-More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ that maximize the nested H-score $\mathscr{H}^{\oplus}(f, g)$ would satisfy
+More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ that maximize the nested H-score $\mathscr{H}^{\perp}(f, g)$ would satisfy
 
  $$
   f_i = a_i \cdot f_i^\ast, \quad g_i = b_i \cdot g_i^\ast,
@@ -50,7 +50,7 @@ More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ tha
  where $a_i, b_i$ are scalars with $a_i \cdot b_i = \mathbb{E}[f_i^\ast(X) g_i^\ast(Y)].$
 
 
-With "$\mathbin{+\mkern-10mu+}$" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\oplus}(f, g)$ with the following nested structure.
+With "$+\!\!+$" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\perp}(f, g)$ with the following nested structure.
 
 <center>
 <img src="images/nested_H.png" width="768">
