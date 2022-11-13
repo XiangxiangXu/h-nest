@@ -1,10 +1,10 @@
 # Nested H-score: Computing Maximal Correlation Functions with Deep Learning
 
-This short script illustrates how to extract maximal correlation functions with deep learning. The key is to optimize a cost function, called **nested H-score**, a variant of the H-score introduced in [1][2][3].
+This short script illustrates how to extract maximal correlation functions with deep learning. The key is to optimize a cost function, called **nested H-score** [1], a variant of the H-score introduced in [2][3][4].
 
 
 ## Maximal Correlation Functions ##
-For given variables $X$, $Y$, the maximal correlation functions $(f_1^\ast(x), g_1^\ast(y)), \dots, (f_k^\ast(x), g_k^\ast(y)), \dots$ represent the maximal correlated aspects of $X$ and $Y$, which can be recursively defined as [4]
+For given variables $X$, $Y$, the maximal correlation functions $(f_1^\ast(x), g_1^\ast(y)), \dots, (f_k^\ast(x), g_k^\ast(y)), \dots$ represent the maximal correlated aspects of $X$ and $Y$, which can be recursively defined as [5]
 
 $$
 f^\ast_i, g_i^\ast = \mathop{\arg \max}_{f_i, g_i} \ \mathbb{E}[f_i(X) g_i(Y)].
@@ -27,7 +27,7 @@ $$
 $$
 <center>
 
-It can be verified that [1] to maximize $\mathscr{H}(f, g)$, the $k$-dimensional subspaces spanned by $f$ and $g$ should match the $k$-dimensional subspaces spanned by the top-$k$ maximal correlation functions $(f_1^\ast, \dots, f_k^\ast)$ and $(g_1^\ast, \dots, g_k^\ast)$, respectively.
+It can be verified that [2] to maximize $\mathscr{H}(f, g)$, the $k$-dimensional subspaces spanned by $f$ and $g$ should match the $k$-dimensional subspaces spanned by the top-$k$ maximal correlation functions $(f_1^\ast, \dots, f_k^\ast)$ and $(g_1^\ast, \dots, g_k^\ast)$, respectively.
 
 ## Nested H-score ##
 
@@ -61,11 +61,13 @@ With "<img src="https://render.githubusercontent.com/render/math?math=%2B%5C!%5C
 
 ## References ##
 
-[1] Wang, Lichen, Jiaxiang Wu, Shao-Lun Huang, Lizhong Zheng, Xiangxiang Xu, Lin Zhang, and Junzhou Huang. "[An efficient approach to informative feature extraction from multimodal data](https://ojs.aaai.org/index.php/AAAI/article/view/4464)." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 33, no. 01, pp. 5281-5288. 2019.
+[1] Xu, Xiangxiang and Lizhong Zheng. [Multivariate Feature Extraction](https://ieeexplore.ieee.org/document/9929401). 2022 58th Annual Allerton Conference on Communication, Control, and Computing (Allerton).
 
-[2] Xu, Xiangxiang, and Shao-Lun Huang. "[Maximal correlation regression](https://ieeexplore.ieee.org/abstract/document/8979352)." IEEE Access 8 (2020): 26591-26601.
+[2] Wang, Lichen, Jiaxiang Wu, Shao-Lun Huang, Lizhong Zheng, Xiangxiang Xu, Lin Zhang, and Junzhou Huang. "[An efficient approach to informative feature extraction from multimodal data](https://ojs.aaai.org/index.php/AAAI/article/view/4464)." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 33, no. 01, pp. 5281-5288. 2019.
 
-[3] Xu, Xiangxiang, Shao-Lun Huang, Lizhong Zheng, and Gregory W. Wornell. 2022. "[An Information Theoretic Interpretation to Deep Neural Networks](https://www.mdpi.com/1099-4300/24/1/135)" Entropy 24, no. 1: 135.
+[3] Xu, Xiangxiang, and Shao-Lun Huang. "[Maximal correlation regression](https://ieeexplore.ieee.org/abstract/document/8979352)." IEEE Access 8 (2020): 26591-26601.
 
-[4] Huang, Shao-Lun, Anuran Makur, Gregory W. Wornell, and Lizhong Zheng. "[On universal features for high-dimensional learning and inference](https://arxiv.org/pdf/1911.09105.pdf)." arXiv preprint arXiv:1911.09105 (2019).
+[4] Xu, Xiangxiang, Shao-Lun Huang, Lizhong Zheng, and Gregory W. Wornell. 2022. "[An Information Theoretic Interpretation to Deep Neural Networks](https://www.mdpi.com/1099-4300/24/1/135)" Entropy 24, no. 1: 135.
+
+[5] Huang, Shao-Lun, Anuran Makur, Gregory W. Wornell, and Lizhong Zheng. "[On universal features for high-dimensional learning and inference](https://arxiv.org/pdf/1911.09105.pdf)." arXiv preprint arXiv:1911.09105 (2019).
 
