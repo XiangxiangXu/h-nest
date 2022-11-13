@@ -2,6 +2,8 @@
 
 This short script illustrates how to extract maximal correlation functions with deep learning. The key is to optimize a cost function, called **nested H-score** [1], a variant of the H-score introduced in [2][3][4].
 
+The implementation is under Keras. A pytorch implementation, together with detailed illustrations, can be found [here](https://gilearning.github.io/NestedHScore/).
+
 
 ## Maximal Correlation Functions ##
 For given variables $X$, $Y$, the maximal correlation functions $(f_1^\ast(x), g_1^\ast(y)), \dots, (f_k^\ast(x), g_k^\ast(y)), \dots$ represent the maximal correlated aspects of $X$ and $Y$, which can be recursively defined as [5]
