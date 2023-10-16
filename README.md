@@ -36,14 +36,14 @@ It can be verified that [2] to maximize $\mathscr{H}(f, g)$, the $k$-dimensional
 The nested H-score is the sum of H-scores associated with a series of nested features, defined as
  
  $$
-    \mathscr{H}^{\perp}(f, g) = \sum_{i = 1}^k \mathscr{H}(f_{[i]}, g_{[i]}),
+    \mathscr{H}^{\star}(f, g) = \sum_{i = 1}^k \mathscr{H}(f_{[i]}, g_{[i]}),
  $$
  
  where $f_{[i]} = [f_1, \dots, f_i]^\mathrm{T}$  is the feature composed of the first $i$-dimensions of $f$.
 
-Then, it can be verified that to maximize the nested H-score $\mathscr{H}^{\perp}(f, g)$, the one-dimension features $f_i$ and $g_i$  must be aligned to the $i$-th maximal correlation functions $f_i^\ast$, $g_i^\ast$, respectively.
+Then, it can be verified that to maximize the nested H-score $\mathscr{H}^{\star}(f, g)$, the one-dimension features $f_i$ and $g_i$  must be aligned to the $i$-th maximal correlation functions $f_i^\ast$, $g_i^\ast$, respectively.
 
-More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ that maximize the nested H-score $\mathscr{H}^{\perp}(f, g)$ would satisfy
+More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ that maximize the nested H-score $\mathscr{H}^{\star}(f, g)$ would satisfy
 
  $$
   f_i = a_i \cdot f_i^\ast, \quad g_i = b_i \cdot g_i^\ast,
@@ -52,7 +52,7 @@ More precisely, the functions $f = (f_1, \dots, f_k), g = (g_1, \dots, g_k)$ tha
  where $a_i, b_i$ are scalars with $a_i \cdot b_i = \mathbb{E}[f_i^\ast(X) g_i^\ast(Y)].$
 
 
-With "<img src="https://render.githubusercontent.com/render/math?math=%2B%5C!%5C!%5C!%5C!%2B">" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\perp}(f, g)$ with the following nested structure.
+With "<img src="https://render.githubusercontent.com/render/math?math=%2B%5C!%5C!%5C!%5C!%2B">" denoting the feature concatenation operation, we can compute nested H-score $\mathscr{H}^{\star}(f, g)$ with the following nested structure.
 
 <center>
 <img src="images/nested_H.png" width="768">
